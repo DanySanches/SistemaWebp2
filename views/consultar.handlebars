@@ -1,38 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <h3 class="navbar-brand">Sistema Web</h3>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <button class="btn btn-sm btn-primary mx-1" type="button">Cadastrar</button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-primary mx-1" type="button">Consultar</button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-sm btn-primary mx-1" type="button">Atualizar</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-      <nav class="navbar bg-primary"> 
-        <form class="container-fluid justify-content-start">
-             <h3 style="color: white;">Sistema Web </h3>
-          <button class="btn btn-sm btn-primary ms-2 " type="button">Cadastrar</button>
-          <button class="btn btn-primary" type="button">Consultar</button>
-         <button class="btn btn-sm btn-primary" type="button">Atualizar</button>
-        </form>
-      </nav>
-      <div class="container mt-4">
+<div class="container mt-4">
   <div class="row">
-    <div class="col">
-        <h4>Consultar</h4>
+    <div class="col-lg-12">
+      <h4>Consultar</h4>
+      <p>Sistema utilizado para agendamentos de serviços</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <p class="text-start fs-5">Cadastrar - Agendamento de Potenciais Clientes</p>
+      <p class="text-start fs-6">Sistema Utilizado para agendamento de serviços.</p>
+      <div class="container text-center overflow-auto">
+        <div class="row bg-primary text-light align-items-start d-flex flex-wrap">
+          <div class="col-sm">Nome</div>
+          <div class="col-sm">Telefone</div>
+          <div class="col-sm">Origem</div>
+          <div class="col-sm">Data de Contato</div>
+          <div class="col-sm">Observação</div>
+          <div class="col-sm">Ações</div>
+        </div>
 
-        <p> Sistema utilizado para agendamentos de serviços</p>
-
-    <br>
-
-    <div class="container text-center bg-primary">
-  <div class="row align-items-start">
-    <div class="col" style="color: white;">
-      Nome
+        <!-- Exemplo de repetição de dados usando Handlebars -->
+        {{#each post}}
+        {{#dataValues}}
+        <div class="row bg-light align-items-center d-flex flex-wrap">
+          <div class="col-sm">{{nome}}</div>
+          <div class="col-sm">{{telefone}}</div>
+          <div class="col-sm">{{origem}}</div>
+          <div class="col-sm">{{data_contato}}</div>
+          <div class="col-sm">{{observacao}}</div>
+          <div class="col-sm">
+            <button type="button" class="btn btn-primary mt-2"><a href="" style="color:inherit">Editar</a></button>
+            <button type="button" class="btn btn-danger ms-2 mt-2"><a href="" style="color:inherit">Excluir</a></button>
+          </div>
+        </div>
+        {{/dataValues}}
+        {{/each}}
+      </div>
     </div>
-    <div class="col" style="color: white;">
-      Telefone
-    </div>
-     <div class="col" style="color: white;">
-      Origem
-    </div>
-     <div class="col" style="color: white;">
-      Data de Contato
-    </div>
-     <div class="col" style="color: white;">
-      Observação
-    </div>
-  
   </div>
 </div>
